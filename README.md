@@ -1,6 +1,6 @@
-# Spring Framework & JPA 토이프로젝트
+# B Bank
   
-  * 2022.10.11 토이 프로젝트 시작 : B Bank  
+  * 2022.10.11 Spring Framework & JPA 토이프로젝트 시작
   - 스프링 프레임워크, JPA, H2 Database, thymeleaf 사용
 ---
   
