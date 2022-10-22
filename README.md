@@ -17,21 +17,13 @@
     
  ---
 ## ERD
-<div align="center">
 < 계좌 관련 ERD >
 <img src="https://user-images.githubusercontent.com/108581627/197327677-ce601162-e4cf-4473-81c8-d8e28564c200.png" width="60%" height="60%"/>
-  </div>
 
-<div align="center">
 < 상품 관련 ERD >
   <img src="https://user-images.githubusercontent.com/108581627/197327681-bbb933b9-5d2d-4378-ada6-d2b492763a9f.png" width="60%" height="60%"/>
-</div>
-
-
-
  
  ---
- 
 ## 메인화면
 <img src="https://user-images.githubusercontent.com/108581627/197326905-888e852b-0a93-4fe3-9641-28f47ca631f8.png"/>
 
