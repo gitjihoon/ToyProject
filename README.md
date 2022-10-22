@@ -21,8 +21,8 @@
  
  ---
 ## 메인화면
-![image](https://user-images.githubusercontent.com/108581627/197326905-888e852b-0a93-4fe3-9641-28f47ca631f8.png){: width="400" height="300"}
-
+![image](https://user-images.githubusercontent.com/108581627/197326905-888e852b-0a93-4fe3-9641-28f47ca631f8.png)
+<img src="https://user-images.githubusercontent.com/108581627/197326905-888e852b-0a93-4fe3-9641-28f47ca631f8.png width="200" height="400"/>
 ---
 ## 고객 가입 & 조회
 ![image](https://user-images.githubusercontent.com/108581627/197326915-0f228543-462d-4e70-9985-269ab2f51874.png)
