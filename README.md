@@ -16,3 +16,6 @@
     2. 계좌 개설 및 해지에 따른 거래내역 생성
     
  ---
+
+## 메인화면
+![image](https://user-images.githubusercontent.com/108581627/197326729-3b83ed45-9c25-4146-9820-83ddf02a06e4.png)
