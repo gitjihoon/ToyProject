@@ -18,4 +18,4 @@
  ---
 
 ## 메인화면
-![image](https://user-images.githubusercontent.com/108581627/197326729-3b83ed45-9c25-4146-9820-83ddf02a06e4.png)
+<img src="[/uploads/1848994ad25765da30fa8ef3684c67bc/캡처.PNG](https://user-images.githubusercontent.com/108581627/197326729-3b83ed45-9c25-4146-9820-83ddf02a06e4.png)"  width="700" height="370">
