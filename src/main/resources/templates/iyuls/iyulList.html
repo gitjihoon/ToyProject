@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: header" />
+<body>
+
+<div class="container">
+    <div th:replace="fragments/bodyHeader :: bodyHeader" />
+    <div>
+        <h5>* 기본이율</h5>
+        <table class="table table-striped text-center">
+            <thead>
+            <tr>
+                <th>상품명</th>
+                <th>적용시작일자</th>
+                <th>적용종료일자</th>
+                <th>최소계약월수</th>
+                <th>최대계약월수</th>
+                <th>기본이율</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="iyul1 : ${basicIyuls}">
+                <td th:text="${iyul1.product.sav_prdt_nm}"></td>
+                <td th:text="${iyul1.aply_bgdt}"></td>
+                <td th:text="${iyul1.aply_clsdt}"></td>
+                <td th:text="${iyul1.min_depo_mmc}"></td>
+                <td th:text="${iyul1.max_depo_mmc}"></td>
+                <td th:text="${iyul1.aply_iyul}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <p></p>
+
+    <hr width = "100%" color = "white" size = "15px">
+
+    <p></p>
+
+    <div>
+        <h5>* 중도해지이율</h5>
+        <table class="table table-striped text-center">
+            <thead>
+            <tr>
+                <th>상품명</th>
+                <th>적용시작일자</th>
+                <th>적용종료일자</th>
+                <th>최소계약월수</th>
+                <th>최대계약월수</th>
+                <th>중도해지이율</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="iyul2 : ${bfcIyuls}">
+                <td th:text="${iyul2.product.sav_prdt_nm}"></td>
+                <td th:text="${iyul2.aply_bgdt}"></td>
+                <td th:text="${iyul2.aply_clsdt}"></td>
+                <td th:text="${iyul2.min_depo_mmc}"></td>
+                <td th:text="${iyul2.max_depo_mmc}"></td>
+                <td th:text="${iyul2.bef_clos_iyul}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <p></p>
+
+    <hr width = "100%" color = "white" size = "15px">
+
+    <p></p>
+
+    <div>
+        <h5>* 만기후이율</h5>
+        <table class="table table-striped text-center">
+            <thead>
+            <tr>
+                <th>상품명</th>
+                <th>적용시작일자</th>
+                <th>적용종료일자</th>
+                <th>최소계약월수</th>
+                <th>최대계약월수</th>
+                <th>만기후이율</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="iyul3 : ${aftExpIyuls}">
+                <td th:text="${iyul3.product.sav_prdt_nm}"></td>
+                <td th:text="${iyul3.aply_bgdt}"></td>
+                <td th:text="${iyul3.aply_clsdt}"></td>
+                <td th:text="${iyul3.min_depo_mmc}"></td>
+                <td th:text="${iyul3.max_depo_mmc}"></td>
+                <td th:text="${iyul3.aft_clos_iyul}"></td>
+
+                <!--
+                <td>
+                    <a href="#" th:href="@{/iyuls/{id}/edit (id=${iyul2.id})}" class="btn btn-primary" role="button">수정</a>
+                </td>
+                -->
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <hr width = "100%" color = "white" size = "15px">
+
+    <div th:replace="fragments/footer :: footer" />
+
+</div> <!-- /container -->
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: header" />
+<style>
+    .fieldError {
+        border-color: #bd2130;
+    }
+</style>
+<body>
+
+<div class="container">
+    <div th:replace="fragments/bodyHeader :: bodyHeader"/>
+
+    <form th:action="@{/products/new}" th:object="${productForm}" method="post">
+
+        <div class="form-group">
+            <label th:for="sav_prdt_nm">상품명</label>
+            <input type="text" th:field="*{sav_prdt_nm}" class="form-control" placeholder="상품명을 입력하세요"
+                   th:class="${#fields.hasErrors('sav_prdt_nm')}? 'form-control fieldError' : 'form-control'">
+            <p th:if="${#fields.hasErrors('sav_prdt_nm')}" th:errors="*{sav_prdt_nm}">Incorrect data</p>
+        </div>
+        <div class="form-group">
+            <label th:for="sale_bgdt">판매시작일자</label>
+            <input type="text" th:field="*{sale_bgdt}" class="form-control" placeholder="판매시작일자를 입력하세요"
+                   th:class="${#fields.hasErrors('sale_bgdt')}? 'form-control fieldError' : 'form-control'">
+            <p th:if="${#fields.hasErrors('sale_bgdt')}" th:errors="*{sale_bgdt}">Incorrect data</p>
+        </div>
+        <div class="form-group">
+            <label th:for="sale_clsdt">판매종료일자</label>
+            <input type="text" th:field="*{sale_clsdt}" class="form-control" placeholder="판매종료일자를 입력하세요"
+                   th:class="${#fields.hasErrors('sale_clsdt')}? 'form-control fieldError' : 'form-control'">
+            <p th:if="${#fields.hasErrors('sale_clsdt')}" th:errors="*{sale_clsdt}">Incorrect data</p>
+        </div>
+        <div class="form-group">
+            <label th:for="min_amt">최소가입금액</label>
+            <input type="number" th:field="*{min_amt}" class="form-control" placeholder="최소가입금액을 입력하세요"
+                   th:class="${#fields.hasErrors('min_amt')}? 'form-control fieldError' : 'form-control'">
+            <p th:if="${#fields.hasErrors('min_amt')}" th:errors="*{min_amt}">Incorrect data</p>
+        </div>
+        <div class="form-group">
+            <label th:for="max_amt">최대가입금액</label>
+            <input type="number" th:field="*{max_amt}" class="form-control" placeholder="최대가입금액을 입력하세요"
+                   th:class="${#fields.hasErrors('max_amt')}? 'form-control fieldError' : 'form-control'">
+            <p th:if="${#fields.hasErrors('max_amt')}" th:errors="*{max_amt}">Incorrect data</p>
+        </div>
+        <p></p>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <br/>
+    <div th:replace="fragments/footer :: footer" />
+
+</div> <!-- /container -->
+
+
+</body>
+</html>

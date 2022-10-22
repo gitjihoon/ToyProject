@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: header" />
+<body>
+
+<div class="container">
+    <div th:replace="fragments/bodyHeader :: bodyHeader"/>
+
+    <form role="form" action="/accounts/new" method="post">
+
+        <div class="form-group">
+            <label for="customer">고객명</label>
+            <select name="cusId" id="customer" class="form-control">
+                <option value="">회원선택</option>
+                <option th:each="customer : ${customers}"
+                        th:value="${customer.id}"
+                        th:text="${customer.cus_nm}" />
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="product">상품명</label>
+            <select name="productId" id="product" class="form-control">
+                <option value="">상품선택</option>
+                <option th:each="product : ${products}"
+                        th:value="${product.id}"
+                        th:text="${product.sav_prdt_nm}" />
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="contr_mmc">계약기간</label>
+            <select name="iyulId" id="contr_mmc" class="form-control">
+                <option value="">계약기간선택</option>
+                <option th:each="iyul : ${basicIyuls}"
+                        th:value="${iyul.id}"
+                        th:text="${iyul.max_depo_mmc}" />
+            </select>
+
+            <label for="iyul">기본이율</label>
+            <select name="iyulId" id="iyul" class="form-control">
+                <option value="">이율선택</option>
+                <option th:each="iyul : ${basicIyuls}"
+                        th:value="${iyul.id}"
+                        th:text="${iyul.aply_iyul}" />
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="contr_amt">가입금액</label>
+            <input type="number" name="contr_amt" class="form-control" id="contr_amt" placeholder="가입금액을 입력하세요">
+        </div>
+        <p></p>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <br/>
+    <div th:replace="fragments/footer :: footer" />
+
+</div> <!-- /container -->
+
+</body>
+</html>

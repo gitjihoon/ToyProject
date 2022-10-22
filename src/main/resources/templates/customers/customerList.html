@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: header" />
+<body>
+
+<div class="container">
+    <div th:replace="fragments/bodyHeader :: bodyHeader" />
+    <div>
+        <table class="table table-striped text-center">
+            <thead>
+            <tr>
+                <th>고객명</th>
+                <th>고객상태</th>
+                <th>생년월일</th>
+                <th>가입일자</th>
+                <th>탈퇴일자</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="customer : ${customers}">
+                <td th:text="${customer.cus_nm}"></td>
+                <td th:text="${customer.cus_stcd}"></td>
+                <td th:text="${customer.birth}"></td>
+                <td th:text="${customer.join_date}"></td>
+                <td th:text="${customer.sc_date}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div th:replace="fragments/footer :: footer" />
+
+</div> <!-- /container -->
+
+</body>
+</html>

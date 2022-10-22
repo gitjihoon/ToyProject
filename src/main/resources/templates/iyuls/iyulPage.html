@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: header"> <!-- fragments 는 include의 개념과 비슷 -->
+    <title>Hello</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+
+<div class="container">
+
+    <div th:replace="fragments/bodyHeader :: bodyHeader" />
+
+    <div class="jumbotron">
+        <h1>B BANK</h1>
+        <p class="lead">이율 정보</p>
+        <p>
+            <a class="btn btn-lg btn-dark" href="/iyuls/iyulPage/new_basic">기본이율 등록</a>
+            <a class="btn btn-lg btn-dark" href="/iyuls/iyulPage/new_bfc">중도해지이율 등록</a>
+            <a class="btn btn-lg btn-dark" href="/iyuls/iyulPage/new_aft">만기후이율 등록</a>
+            <a class="btn btn-lg btn-dark" href="/iyuls">이율 정보</a>
+        </p>
+
+        <p></p>
+    </div>
+    <a class="btn btn-lg btn-dark" onclick="history.back();" style="float: right;">뒤로</a>
+
+    <p></p>
+    <p></p>
+
+    <div th:replace="fragments/footer :: footer" />
+
+</div> <!-- /container -->
+
+</body>
+</html>

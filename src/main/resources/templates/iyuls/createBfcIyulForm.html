@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: header" />
+<style>
+    .fieldError {
+        border-color: #bd2130;
+    }
+</style>
+<body>
+
+<div class="container">
+    <div th:replace="fragments/bodyHeader :: bodyHeader"/>
+
+    <form role="form" action="/iyuls/iyulPage/new_bfc" th:object="${iyulForm}" method="post">
+
+        <div class="form-group">
+            <label for="product">상품명</label>
+            <select name="productId" id="product" class="form-control">
+                <option value="">상품선택</option>
+                <option th:each="product : ${products}"
+                        th:value="${product.id}"
+                        th:text="${product.sav_prdt_nm}" />
+            </select>
+        </div>
+
+        <p></p>
+
+        <div class="form-group">
+            <label th:for="aply_bgdt">적용시작일자</label>
+
+            <input type="text" th:field="*{aply_bgdt}" class="form-control" placeholder="적용시작일자를 입력하세요"
+                   th:class="${#fields.hasErrors('aply_bgdt')}? 'form-control fieldError' : 'form-control'">
+            <p th:if="${#fields.hasErrors('aply_bgdt')}" th:errors="*{aply_bgdt}">Incorrect date</p>
+        </div>
+
+        <div class="form-group">
+            <label th:for="aply_clsdt">적용종료일자</label>
+
+            <input type="text" th:field="*{aply_clsdt}" class="form-control" placeholder="적용종료일자를 입력하세요"
+                   th:class="${#fields.hasErrors('aply_clsdt')}? 'form-control fieldError' : 'form-control'">
+            <p th:if="${#fields.hasErrors('aply_clsdt')}" th:errors="*{aply_clsdt}">Incorrect date</p>
+        </div>
+
+        <div class="form-group">
+            <label th:for="min_depo_mmc">최소계약월수</label>
+            <input type="text" th:field="*{min_depo_mmc}" class="form-control" placeholder="최소계약월수를 입력하세요"
+                   th:class="${#fields.hasErrors('min_depo_mmc')}? 'form-control fieldError' : 'form-control'">
+            <p th:if="${#fields.hasErrors('min_depo_mmc')}" th:errors="*{min_depo_mmc}">Incorrect date</p>
+        </div>
+
+        <div class="form-group">
+            <label th:for="max_depo_mmc">최대계약월수</label>
+            <input type="text" th:field="*{max_depo_mmc}" class="form-control" placeholder="최대계약월수를 입력하세요"
+                   th:class="${#fields.hasErrors('max_depo_mmc')}? 'form-control fieldError' : 'form-control'">
+            <p th:if="${#fields.hasErrors('max_depo_mmc')}" th:errors="*{max_depo_mmc}">Incorrect date</p>
+        </div>
+        <div class="form-group">
+            <label th:for="bef_clos_iyul">중도해지이율</label>
+            <input type="number" step="0.001" th:field="*{bef_clos_iyul}" class="form-control" placeholder="중도해지이율을 입력하세요">
+            <p th:if="${#fields.hasErrors('bef_clos_iyul')}" th:errors="*{bef_clos_iyul}">Incorrect date</p>
+        </div>
+
+        <p></p>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <br/>
+    <div th:replace="fragments/footer :: footer" />
+</div> <!-- /container -->
+
+</body>
+</html>
